@@ -1,0 +1,525 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fiamma — Wood-Fired Pizzeria</title>
+  <meta name="description" content="Fiamma is a neighbourhood wood-fired pizzeria. 48-hour dough, San Marzano tomatoes, fior di latte, baked in 90 seconds at 485°C." />
+  <meta name="theme-color" content="#1f1a17" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='46' fill='%23d9a441'/%3E%3Ccircle cx='50' cy='50' r='37' fill='%23c8361e'/%3E%3Ccircle cx='38' cy='40' r='9' fill='%23fbf5e8'/%3E%3Ccircle cx='62' cy='58' r='10' fill='%23fbf5e8'/%3E%3Cellipse cx='60' cy='36' rx='5' ry='9' fill='%233f6b3a' transform='rotate(35 60 36)'/%3E%3C/svg%3E" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,800;1,9..144,400;1,9..144,600&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" id="top">
+    <div class="nav__inner container">
+      <a href="#top" class="logo" aria-label="Fiamma home">
+        <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+          <path d="M20 3c4 7 11 10 11 19a11 11 0 0 1-22 0c0-5 3-8 5-10 0 4 2 6 4 6-1-6 0-11 2-15Z" />
+        </svg>
+        <span class="logo__word">Fiamma</span>
+      </a>
+
+      <nav class="nav__links" id="nav-links" aria-label="Primary">
+        <a href="#menu">Menu</a>
+        <a href="#story">Our story</a>
+        <a href="#craft">The oven</a>
+        <a href="#visit">Visit</a>
+        <a href="#visit" class="btn btn--small btn--primary nav__cta">Book a table</a>
+      </nav>
+
+      <button class="nav__toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="container hero__grid">
+        <div class="hero__copy">
+          <p class="eyebrow">Wood-fired Neapolitan pizza · Est. 2014</p>
+          <h1 class="hero__title">Fire, flour<br />&amp; a little <em>patience.</em></h1>
+          <p class="hero__lede">
+            Dough rested for 48 hours. Baked for 90 seconds in a 485°C oven we built
+            brick by brick. Pulled straight to your table, blistered and soft in the middle,
+            the way they do it in Napoli.
+          </p>
+          <div class="hero__actions">
+            <a href="#menu" class="btn btn--primary">See the menu</a>
+            <a href="#visit" class="btn btn--ghost">Book a table</a>
+          </div>
+          <p class="status" id="open-status" aria-live="polite">
+            <span class="status__dot"></span>
+            <span class="status__text">Checking our hours…</span>
+          </p>
+        </div>
+
+        <div class="hero__art" aria-hidden="true">
+          <svg class="ring" viewBox="0 0 500 500">
+            <defs>
+              <path id="ring-path" d="M250,250 m-232,0 a232,232 0 1,1 464,0 a232,232 0 1,1 -464,0" />
+            </defs>
+            <text>
+              <textPath href="#ring-path" textLength="1450">
+                WOOD-FIRED ✺ NAPOLETANA ✺ 48-HOUR DOUGH ✺ SINCE 2014 ✺
+              </textPath>
+            </text>
+          </svg>
+
+          <svg class="pizza" viewBox="0 0 400 400">
+            <defs>
+              <radialGradient id="crust" cx="50%" cy="50%" r="50%">
+                <stop offset="78%" stop-color="#e9bd6a" />
+                <stop offset="92%" stop-color="#d9a441" />
+                <stop offset="100%" stop-color="#b9792c" />
+              </radialGradient>
+              <radialGradient id="sauce" cx="45%" cy="40%" r="60%">
+                <stop offset="0%" stop-color="#d9452a" />
+                <stop offset="100%" stop-color="#a92a16" />
+              </radialGradient>
+              <path id="cheese" d="M-30,-8 C-28,-26 -6,-32 10,-26 C28,-20 34,-4 30,10 C26,26 6,32 -10,28 C-26,24 -32,8 -30,-8Z" />
+              <g id="leaf">
+                <path d="M0,-24 C15,-15 17,9 0,24 C-17,9 -15,-15 0,-24Z" fill="#3f6b3a" />
+                <path d="M0,-20 L0,20" stroke="#2c4d29" stroke-width="1.6" stroke-linecap="round" />
+              </g>
+            </defs>
+
+            <!-- crust -->
+            <circle cx="200" cy="200" r="192" fill="url(#crust)" />
+            <!-- leopard spotting on the cornicione -->
+            <g fill="#3a2414" opacity=".78">
+              <circle cx="375" cy="231" r="5" /><circle cx="321" cy="330" r="7" />
+              <circle cx="222" cy="377" r="4" /><circle cx="86" cy="336" r="6" />
+              <circle cx="27" cy="243" r="4" /><circle cx="39" cy="125" r="7" />
+              <circle cx="111" cy="46" r="5" /><circle cx="237" cy="26" r="6" />
+              <circle cx="332" cy="81" r="4" /><circle cx="375" cy="169" r="6" />
+              <circle cx="362" cy="286" r="3" /><circle cx="152" cy="378" r="5" />
+              <circle cx="18" cy="174" r="3" /><circle cx="174" cy="18" r="3" />
+              <circle cx="292" cy="41" r="4" />
+            </g>
+            <!-- sauce -->
+            <circle cx="200" cy="200" r="158" fill="url(#sauce)" />
+            <!-- fior di latte -->
+            <g fill="#fbf5e8">
+              <use href="#cheese" transform="translate(140 130) rotate(10) scale(1.1)" />
+              <use href="#cheese" transform="translate(262 128) rotate(-30) scale(.95)" />
+              <use href="#cheese" transform="translate(118 248) rotate(60) scale(1)" />
+              <use href="#cheese" transform="translate(205 205) rotate(-10) scale(1.2)" />
+              <use href="#cheese" transform="translate(288 250) rotate(40) scale(1.05)" />
+              <use href="#cheese" transform="translate(196 305) rotate(80) scale(.9)" />
+            </g>
+            <!-- olive-oil sheen + oregano flecks -->
+            <g fill="#fff" opacity=".18">
+              <ellipse cx="150" cy="170" rx="40" ry="12" transform="rotate(-30 150 170)" />
+              <ellipse cx="250" cy="285" rx="30" ry="8" transform="rotate(-30 250 285)" />
+            </g>
+            <g fill="#4a2a18" opacity=".55">
+              <circle cx="175" cy="160" r="1.6" /><circle cx="232" cy="172" r="1.4" />
+              <circle cx="160" cy="210" r="1.5" /><circle cx="250" cy="215" r="1.3" />
+              <circle cx="230" cy="260" r="1.6" /><circle cx="150" cy="290" r="1.4" />
+              <circle cx="300" cy="190" r="1.5" /><circle cx="110" cy="190" r="1.3" />
+            </g>
+            <!-- basil -->
+            <use href="#leaf" transform="translate(190 120) rotate(35)" />
+            <use href="#leaf" transform="translate(250 190) rotate(-55) scale(.9)" />
+            <use href="#leaf" transform="translate(150 270) rotate(110) scale(1.05)" />
+            <use href="#leaf" transform="translate(265 300) rotate(15) scale(.85)" />
+          </svg>
+
+          <div class="sticker">
+            <span class="sticker__big">90</span>
+            <span class="sticker__small">second<br />bake</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ MARQUEE ============ -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>48-hour dough</span><i>✺</i>
+        <span>San Marzano tomatoes</span><i>✺</i>
+        <span>Fior di latte from Agerola</span><i>✺</i>
+        <span>Oak &amp; beech fire</span><i>✺</i>
+        <span>485°C</span><i>✺</i>
+        <span>90-second bake</span><i>✺</i>
+        <span>48-hour dough</span><i>✺</i>
+        <span>San Marzano tomatoes</span><i>✺</i>
+        <span>Fior di latte from Agerola</span><i>✺</i>
+        <span>Oak &amp; beech fire</span><i>✺</i>
+        <span>485°C</span><i>✺</i>
+        <span>90-second bake</span><i>✺</i>
+      </div>
+    </div>
+
+    <!-- ============ STORY / BIO ============ -->
+    <section class="story section" id="story">
+      <div class="container story__grid">
+        <div class="story__quote reveal">
+          <p class="eyebrow">Our story</p>
+          <blockquote>
+            “The oven is the only one in this kitchen I never had to train.
+            <em>It already knew everything.</em>”
+          </blockquote>
+          <div class="badge">
+            <span>Napoli</span>
+            <svg viewBox="0 0 60 12" aria-hidden="true"><path d="M0 6h54M48 1l6 5-6 5" /></svg>
+            <span>Here</span>
+          </div>
+        </div>
+
+        <div class="story__body reveal">
+          <h2 class="section__title">A bakery kid, a sourdough starter, and one very hot oven.</h2>
+          <p>
+            Giulia Ferraro grew up above her grandfather’s bakery in the Quartieri Spagnoli,
+            where she learned two things before she could read: dough has a mood, and you
+            never rush it.
+          </p>
+          <p>
+            In 2014 she arrived with a suitcase, a bag of tipo 00 flour, and a jar of starter
+            she still calls <em>Nonno</em>. She spent her first winter building our oven by hand
+            from volcanic clay and firebrick, and opened Fiamma with twelve seats, one pizza
+            on the menu, and a line out the door by the end of the week.
+          </p>
+          <p>
+            Twelve years on, the room is bigger but the rules haven’t changed. Four ingredients
+            in the dough. Forty-eight hours to rest. Ninety seconds in the fire. Everything else
+            is just good company.
+          </p>
+          <p class="signature">Giulia <span>— founder &amp; pizzaiola</span></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CRAFT ============ -->
+    <section class="craft section" id="craft">
+      <div class="container">
+        <div class="craft__head">
+          <p class="eyebrow eyebrow--light">How we make it</p>
+          <h2 class="section__title">Three things we refuse to cut corners on.</h2>
+        </div>
+
+        <ol class="craft__grid">
+          <li class="craft__card reveal">
+            <span class="craft__stat">48<small>h</small></span>
+            <h3>The dough</h3>
+            <p>Flour, water, sea salt, and Nonno. That’s it. A slow, cold rise gives it flavour,
+              lightness, and that leopard-spotted crust.</p>
+          </li>
+          <li class="craft__card reveal">
+            <span class="craft__stat">485<small>°C</small></span>
+            <h3>The fire</h3>
+            <p>Seasoned oak and beech, fed all night. Our hand-built dome holds heat so evenly
+              that the base chars while the top stays tender.</p>
+          </li>
+          <li class="craft__card reveal">
+            <span class="craft__stat">90<small>s</small></span>
+            <h3>The table</h3>
+            <p>Pizza waits for no one, so we don’t make it wait. Out of the oven and in front of you
+              while the cheese is still moving.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ MENU ============ -->
+    <section class="menu section" id="menu">
+      <div class="container">
+        <div class="menu__head">
+          <div>
+            <p class="eyebrow">The menu</p>
+            <h2 class="section__title">Short list. <em>No filler.</em></h2>
+          </div>
+          <p class="menu__note">
+            <span class="tag tag--v">V</span> vegetarian
+            <span class="tag tag--vg">VG</span> vegan
+            <span class="tag tag--hot">🌶</span> spicy
+            <br />Gluten-free base available on any pizza, +3.
+          </p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Menu categories">
+          <button class="tab is-active" role="tab" aria-selected="true" aria-controls="panel-rosse" id="tab-rosse">Pizze Rosse</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-bianche" id="tab-bianche" tabindex="-1">Pizze Bianche</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-antipasti" id="tab-antipasti" tabindex="-1">Antipasti</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-dolci" id="tab-dolci" tabindex="-1">Dolci</button>
+          <button class="tab" role="tab" aria-selected="false" aria-controls="panel-drinks" id="tab-drinks" tabindex="-1">Drinks</button>
+        </div>
+
+        <!-- Pizze Rosse -->
+        <div class="panel is-active" role="tabpanel" id="panel-rosse" aria-labelledby="tab-rosse">
+          <p class="panel__intro">Tomato base: hand-crushed San Marzano DOP, a pinch of sea salt, nothing else.</p>
+          <ul class="dishes">
+            <li class="dish">
+              <div class="dish__line"><h3>Marinara <span class="tag tag--vg">VG</span></h3><span class="dish__price">11</span></div>
+              <p>San Marzano, garlic, wild oregano, Sicilian olive oil.</p>
+            </li>
+            <li class="dish dish--star">
+              <div class="dish__line"><h3>Margherita <span class="tag tag--v">V</span> <span class="tag tag--fav">House favourite</span></h3><span class="dish__price">13</span></div>
+              <p>San Marzano, fior di latte, basil, extra-virgin olive oil. The one that started it all.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Diavola <span class="tag tag--hot">🌶</span></h3><span class="dish__price">16</span></div>
+              <p>San Marzano, fior di latte, spicy Calabrian salame, chilli honey.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Napoli</h3><span class="dish__price">15</span></div>
+              <p>San Marzano, Cantabrian anchovies, capers, black olives, oregano.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Capricciosa</h3><span class="dish__price">17</span></div>
+              <p>San Marzano, fior di latte, prosciutto cotto, artichoke, mushrooms, olives.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>’Nduja &amp; Burrata <span class="tag tag--hot">🌶</span></h3><span class="dish__price">18</span></div>
+              <p>San Marzano, spicy ’nduja, whole burrata torn on after the bake, basil.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Pizze Bianche -->
+        <div class="panel" role="tabpanel" id="panel-bianche" aria-labelledby="tab-bianche">
+          <p class="panel__intro">No tomato. Just cheese, fire, and whatever’s good this week.</p>
+          <ul class="dishes">
+            <li class="dish">
+              <div class="dish__line"><h3>Quattro Formaggi <span class="tag tag--v">V</span></h3><span class="dish__price">17</span></div>
+              <p>Fior di latte, gorgonzola dolce, smoked provola, parmigiano, cracked black pepper.</p>
+            </li>
+            <li class="dish dish--star">
+              <div class="dish__line"><h3>Mortadella &amp; Pistachio <span class="tag tag--fav">Chef’s pick</span></h3><span class="dish__price">19</span></div>
+              <p>Fior di latte, Bologna mortadella, stracciatella, pistachio pesto, lemon zest.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Salsiccia e Friarielli <span class="tag tag--hot">🌶</span></h3><span class="dish__price">17</span></div>
+              <p>Smoked provola, fennel sausage, Neapolitan broccoli rabe, chilli flakes.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Funghi &amp; Tartufo <span class="tag tag--v">V</span></h3><span class="dish__price">18</span></div>
+              <p>Fior di latte, roasted wild mushrooms, black truffle cream, thyme.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Patate e Rosmarino <span class="tag tag--v">V</span></h3><span class="dish__price">15</span></div>
+              <p>Paper-thin potato, rosemary, smoked provola, flaky sea salt.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Antipasti -->
+        <div class="panel" role="tabpanel" id="panel-antipasti" aria-labelledby="tab-antipasti">
+          <p class="panel__intro">For the table, while the oven does its thing.</p>
+          <ul class="dishes">
+            <li class="dish">
+              <div class="dish__line"><h3>Montanarine <span class="tag tag--v">V</span></h3><span class="dish__price">8</span></div>
+              <p>Little fried pizzas, tomato, parmigiano, basil. Four to a plate.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Burrata <span class="tag tag--v">V</span></h3><span class="dish__price">13</span></div>
+              <p>Heirloom tomatoes, basil oil, sea salt, wood-fired bread.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Arancini <span class="tag tag--v">V</span></h3><span class="dish__price">9</span></div>
+              <p>Saffron risotto, molten mozzarella heart, tomato sugo (3 pcs).</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Polpette al Forno</h3><span class="dish__price">12</span></div>
+              <p>Beef &amp; pork meatballs baked in sugo, parmigiano, grilled bread.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Rucola e Pera <span class="tag tag--v">V</span></h3><span class="dish__price">10</span></div>
+              <p>Wild rocket, pear, shaved parmigiano, aged balsamic.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Dolci -->
+        <div class="panel" role="tabpanel" id="panel-dolci" aria-labelledby="tab-dolci">
+          <p class="panel__intro">Save room. Seriously.</p>
+          <ul class="dishes">
+            <li class="dish dish--star">
+              <div class="dish__line"><h3>Tiramisù <span class="tag tag--v">V</span> <span class="tag tag--fav">Nonna’s recipe</span></h3><span class="dish__price">8</span></div>
+              <p>Savoiardi, espresso, mascarpone, a generous shake of cocoa.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Pizza Fritta alla Nutella <span class="tag tag--v">V</span></h3><span class="dish__price">9</span></div>
+              <p>Fried dough pillows, Nutella, toasted hazelnuts, icing sugar.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Affogato <span class="tag tag--v">V</span></h3><span class="dish__price">6</span></div>
+              <p>Fior di latte gelato drowned in a double espresso.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Sorbetto al Limone <span class="tag tag--vg">VG</span></h3><span class="dish__price">6</span></div>
+              <p>Amalfi lemon sorbet, served in the frozen lemon.</p>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Drinks -->
+        <div class="panel" role="tabpanel" id="panel-drinks" aria-labelledby="tab-drinks">
+          <p class="panel__intro">Natural wines by the glass, Italian beer on tap, and very good espresso.</p>
+          <ul class="dishes">
+            <li class="dish">
+              <div class="dish__line"><h3>House Negroni</h3><span class="dish__price">12</span></div>
+              <p>Gin, Campari, sweet vermouth, orange peel.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Aperol Spritz</h3><span class="dish__price">11</span></div>
+              <p>Aperol, prosecco, soda, a fat slice of orange.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Vino Rosso / Bianco</h3><span class="dish__price">9</span></div>
+              <p>Rotating natural wines from small Italian growers. Ask what’s open.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Birra alla Spina</h3><span class="dish__price">6</span></div>
+              <p>Crisp Italian lager on draught.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Aranciata / Limonata</h3><span class="dish__price">4</span></div>
+              <p>Sicilian sparkling citrus sodas.</p>
+            </li>
+            <li class="dish">
+              <div class="dish__line"><h3>Espresso</h3><span class="dish__price">3</span></div>
+              <p>Short, strong, Neapolitan roast.</p>
+            </li>
+          </ul>
+        </div>
+
+        <p class="menu__foot">Please tell us about any allergies. Our kitchen handles gluten, dairy, nuts, and fish.</p>
+      </div>
+    </section>
+
+    <!-- ============ SPECIAL BAND ============ -->
+    <section class="special">
+      <div class="container special__inner reveal">
+        <p class="special__day">Every Tuesday</p>
+        <p class="special__text">A Margherita and a glass of house red for <strong>18</strong>.</p>
+        <a href="#visit" class="btn btn--cream">Grab a seat</a>
+      </div>
+    </section>
+
+    <!-- ============ VISIT ============ -->
+    <section class="visit section" id="visit">
+      <div class="container visit__grid">
+        <div class="visit__info">
+          <p class="eyebrow">Come by</p>
+          <h2 class="section__title">Find us by the smell of woodsmoke.</h2>
+
+          <div class="info-block">
+            <h3>Address</h3>
+            <p id="address">24 Ember Street, Old Town</p>
+            <a class="link" id="directions" href="#" target="_blank" rel="noopener">Get directions →</a>
+          </div>
+
+          <div class="info-block">
+            <h3>Contact</h3>
+            <p><a class="link" href="tel:+15550142014">(555) 014-2014</a></p>
+            <p><a class="link" href="mailto:hello@example.com">hello@example.com</a></p>
+          </div>
+
+          <div class="info-block">
+            <h3>Hours</h3>
+            <table class="hours" id="hours">
+              <tbody>
+                <tr data-day="1"><th>Monday</th><td>Closed</td></tr>
+                <tr data-day="2"><th>Tuesday</th><td>17:00 – 22:00</td></tr>
+                <tr data-day="3"><th>Wednesday</th><td>17:00 – 22:00</td></tr>
+                <tr data-day="4"><th>Thursday</th><td>17:00 – 22:00</td></tr>
+                <tr data-day="5"><th>Friday</th><td>17:00 – 23:00</td></tr>
+                <tr data-day="6"><th>Saturday</th><td>12:00 – 23:00</td></tr>
+                <tr data-day="0"><th>Sunday</th><td>12:00 – 21:00</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <form class="booking" id="booking" data-email="hello@example.com" novalidate>
+          <h3 class="booking__title">Book a table</h3>
+          <p class="booking__sub">Walk-ins are always welcome at the counter. For groups, book ahead.</p>
+
+          <label class="field">
+            <span>Name</span>
+            <input name="name" type="text" autocomplete="name" required />
+          </label>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Date</span>
+              <input name="date" type="date" required />
+            </label>
+            <label class="field">
+              <span>Time</span>
+              <select name="time" required>
+                <option value="">Pick a time</option>
+                <option>12:00</option><option>12:30</option><option>13:00</option><option>13:30</option>
+                <option>17:00</option><option>17:30</option><option>18:00</option><option>18:30</option>
+                <option>19:00</option><option>19:30</option><option>20:00</option><option>20:30</option>
+                <option>21:00</option><option>21:30</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="field-row">
+            <label class="field">
+              <span>Guests</span>
+              <select name="guests" required>
+                <option>1</option><option selected>2</option><option>3</option><option>4</option>
+                <option>5</option><option>6</option><option>7</option><option>8+</option>
+              </select>
+            </label>
+            <label class="field">
+              <span>Phone</span>
+              <input name="phone" type="tel" autocomplete="tel" />
+            </label>
+          </div>
+
+          <label class="field">
+            <span>Anything we should know?</span>
+            <textarea name="notes" rows="3" placeholder="Birthday, allergies, high chair…"></textarea>
+          </label>
+
+          <button type="submit" class="btn btn--primary btn--block">Request booking</button>
+          <p class="booking__msg" id="booking-msg" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div>
+        <a href="#top" class="logo logo--light" aria-label="Back to top">
+          <svg class="logo__mark" viewBox="0 0 40 40" aria-hidden="true">
+            <path d="M20 3c4 7 11 10 11 19a11 11 0 0 1-22 0c0-5 3-8 5-10 0 4 2 6 4 6-1-6 0-11 2-15Z" />
+          </svg>
+          <span class="logo__word">Fiamma</span>
+        </a>
+        <p class="footer__tag">Wood-fired pizza, made slowly, eaten quickly.</p>
+      </div>
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#menu">Menu</a>
+        <a href="#story">Our story</a>
+        <a href="#visit">Visit</a>
+        <a href="#" aria-label="Instagram">Instagram</a>
+      </nav>
+    </div>
+    <div class="container footer__base">
+      <span>© <span id="year">2026</span> Fiamma Pizzeria</span>
+      <span>Made with 00 flour &amp; patience.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
